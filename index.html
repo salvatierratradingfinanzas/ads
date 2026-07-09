@@ -1,7 +1,4 @@
-
-
-
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -45,6 +42,7 @@
             
             <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
                 <a href="#cursos" class="hover:text-original transition">Cursos</a>
+                <a href="#servicios-adicionales" class="hover:text-original transition">Inversiones y Asesorías</a>
                 <a href="#contacto" class="hover:text-original transition">Inscribirse</a>
                 <a href="#beneficios" class="hover:text-original transition">Beneficios</a>
                 <a href="#experiencia" class="hover:text-original transition">Formador</a>
@@ -70,36 +68,157 @@
         muted 
         playsinline 
         class="absolute inset-0 w-full h-full object-cover -z-20">
-        <source src="img/fund.mp4" type="video/mp4">
-        <!-- Puedes añadir un formato .webm abajo si lo tienes para mejor optimización -->
+        <source src="img/video/fund2.mp4" type="video/mp4">
     </video>
 
-    <!-- CAPA OSCURA / DEGRADADO (Para asegurar que el texto se lea bien sobre el video) -->
+    <!-- CAPA OSCURA / DEGRADADO -->
     <div class="absolute inset-0 bg-black opacity-50 -z-10"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        
-            <!-- <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Mentoría Profesional Alta Especialización 2026
-        </span> -->
-        <!-- Cambié text-slate-900 a text-white para contrastar con el fondo oscuro del video -->
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight max-w-4xl mx-auto leading-tight text-white">
             Conviértete en TRADER RENTABLE <span class="text-red-200"> y aprende a analizar el mercado como los profesionales</span>
         </h1>
-        <!-- Cambié text-slate-600 a text-slate-200 para mejor lectura -->
-        <!-- <p class="mt-6 text-base sm:text-lg text-slate-200 max-w-2xl mx-auto font-medium leading-relaxed">
-            Pasa de cero a comprender la liquidez institucional, encontrar oportunidades ventajosas. Aprende a leer el mapa del precio y el volumen operativo real.
-        </p> -->
         <div class="mt-10 flex flex-wrap justify-center gap-4">
             <a href="#cursos" class="bg-original hover:bg-original/90 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-original/20 transition-all transform hover:-translate-y-0.5 tracking-wide text-sm">
                 Ver Programas de Estudio
             </a>
-            <!-- Ajustado el botón secundario para que resalte en el entorno oscuro -->
             <a href="#contacto" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition tracking-wide text-sm border border-white/20 backdrop-blur-sm">
                 Contactar un Asesor
             </a>
         </div>
     </div>
 </section>
+
+<!-- SECCIÓN: SERVICIOS ADICIONALES (CON MARCOS PARA IMÁGENES) -->
+    <section id="servicios-adicionales" class="py-24 bg-white border-t border-slate-200/60" x-data="{ activeTab: 'inversiones' }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-black tracking-tight sm:text-4xl text-slate-900">Soluciones Financieras Complementarias</h2>
+                <div class="w-16 h-1 bg-claro mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 font-medium">Diversifica tu capital bajo modelos eficientes de inversión o gestiona tus transacciones internacionales con soporte experto.</p>
+            </div>
+
+            <!-- Selectores de pestaña (Píldoras limpias) -->
+            <div class="flex justify-center mb-12">
+                <div class="bg-fondo p-1.5 rounded-2xl inline-flex gap-2 border border-slate-200 shadow-inner">
+                    <button 
+                        @click="activeTab = 'inversiones'; $nextTick(() => lucide.createIcons())" 
+                        :class="activeTab === 'inversiones' ? 'bg-original text-white shadow-md' : 'text-slate-600 hover:text-original'"
+                        class="py-3 px-6 rounded-xl font-bold text-sm transition-all duration-300 focus:outline-none flex items-center gap-2.5">
+                        <i data-lucide="trending-up" class="w-4 h-4"></i> Servicios de Inversión
+                    </button>
+                    <button 
+                        @click="activeTab = 'asesorias'; $nextTick(() => lucide.createIcons())" 
+                        :class="activeTab === 'asesorias' ? 'bg-original text-white shadow-md' : 'text-slate-600 hover:text-original'"
+                        class="py-3 px-6 rounded-xl font-bold text-sm transition-all duration-300 focus:outline-none flex items-center gap-2.5">
+                        <i data-lucide="help-circle" class="w-4 h-4"></i> Asesorías y Corretaje
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contenido Pestaña 1: Servicios de Inversión -->
+            <div x-show="activeTab === 'inversiones'" x-transition:enter="transition ease-out duration-300" class="grid md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+                <!-- Renta Fija -->
+                <div class="bg-fondo rounded-2xl border border-slate-200/80 p-8 flex flex-col justify-between hover:border-claro/60 hover:shadow-md transition-all duration-300">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="bg-original/10 text-original text-xs font-bold px-3 py-1 rounded-full border border-original/20">Modelo Estable</span>
+                            <div class="w-10 h-10 rounded-xl bg-original/5 flex items-center justify-center text-original">
+                                <i data-lucide="pie-chart" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Inversión en Renta Fija</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-medium">Diseñado para perfiles que priorizan la preservación del patrimonio y flujos de caja predecibles mediante una gestión de riesgo sumamente mitigada y respaldada.</p>
+                        
+                        <!-- MARCO DE IMAGEN RENTA FIJA -->
+                        <div class="w-full h-48 bg-white border border-slate-200 rounded-xl p-2 mb-6 flex items-center justify-center overflow-hidden group shadow-sm">
+                            <img src="img/renta_fija.jpg" alt="Renta Fija" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition duration-300">
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm mb-6">
+                            <span class="text-xs text-slate-400 uppercase tracking-wider block font-bold">Beneficio Bajo - Riesgo Bajo</span>
+                            <span class="text-3xl font-black text-original">20% <span class="text-lg font-bold text-claro">+ Bonos</span></span>
+                        </div>
+                    </div>
+                    <a href="#contacto" class="block text-center bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-4 rounded-xl transition uppercase tracking-wider shadow-sm">APLICAR COMO INVERSIONISTA</a>
+                </div>
+
+                <!-- Renta Variable -->
+                <div class="bg-white rounded-2xl border-2 border-original p-8 flex flex-col justify-between shadow-lg shadow-original/5 hover:shadow-xl transition-all duration-300">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="bg-claro/20 text-original text-xs font-bold px-3 py-1 rounded-full border border-claro/30">Rendimiento Alto - Riesgo Alto</span>
+                            <div class="w-10 h-10 rounded-xl bg-claro/10 flex items-center justify-center text-original">
+                                <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Inversión en Renta Variable</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-medium">Participa en las dinámicas de los mercados de futuros y criptoactivos de alta liquidez mediante nuestro sistema operativo diversificado y profesional.</p>
+                        
+                        <!-- MARCO DE IMAGEN RENTA VARIABLE -->
+                        <div class="w-full h-48 bg-fondo border border-slate-200 rounded-xl p-2 mb-6 flex items-center justify-center overflow-hidden group">
+                            <img src="img/renta_variable.jpg" alt="Renta Variable" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition duration-300">
+                        </div>
+
+                        <div class="bg-fondo p-5 rounded-xl border border-slate-200 shadow-inner mb-6">
+                            <span class="text-xs text-slate-400 uppercase tracking-wider block font-bold">Rendimiento Alto - Riesgo Medio</span>
+                            <span class="text-3xl font-black text-original">30% al 40% <span class="text-sm font-bold text-slate-500">Anual</span></span>
+                        </div>
+                    </div>
+                    <a href="#contacto" class="block text-center bg-original hover:bg-original/90 text-white text-xs font-bold py-4 rounded-xl transition uppercase tracking-wider shadow-md shadow-original/10">Aplicar como Inversionista</a>
+                </div>
+            </div>
+
+            <!-- Contenido Pestaña 2: Asesorías y Corretaje -->
+            <div x-show="activeTab === 'asesorias'" x-transition:enter="transition ease-out duration-300" class="max-w-5xl mx-auto bg-white rounded-2xl border border-slate-200 p-8 sm:p-10 shadow-sm hover:border-claro/40 transition-all duration-300">
+                
+                <div class="grid md:grid-cols-3 gap-8 items-center border-b border-slate-100 pb-8 mb-8">
+                    <!-- Información Izquierda -->
+                    <div class="md:col-span-2">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-claro/10 text-original flex items-center justify-center rounded-xl border border-claro/20 shrink-0">
+                                <i data-lucide="globe" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-slate-900">Asesoría Operativa Financiera</h3>
+                                <p class="text-slate-600 text-sm mt-1 font-medium">Soluciones técnicas y estructuradas frente a las restricciones bancarias y flujos de divisas transfronterizos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- MARCO DE IMAGEN PRINCIPAL ASESORÍAS -->
+                    <div class="w-full h-32 bg-fondo border border-slate-200 rounded-xl p-1.5 flex items-center justify-center overflow-hidden group">
+                        <img src="img/asesorias.gif" alt="Asesoría Financiera" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition duration-300">
+                    </div>
+                </div>
+
+                <!-- Tarjetas de subservicios -->
+                <div class="grid sm:grid-cols-3 gap-6">
+                    <div class="p-5 bg-fondo rounded-xl border border-slate-200 hover:border-claro/40 transition">
+                        <div class="w-9 h-9 rounded-lg bg-original/10 text-original flex items-center justify-center mb-4 shadow-sm"><i data-lucide="wallet" class="w-4 h-4"></i></div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-2">Compra de USDTS</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed font-medium">Consultoría personalizada para mitigar riesgos cambiarios operando bajo altos estándares de liquidez y cotizaciones competitivas.</p>
+                    </div>
+                    <div class="p-5 bg-fondo rounded-xl border border-slate-200 hover:border-claro/40 transition">
+                        <div class="w-9 h-9 rounded-lg bg-original/10 text-original flex items-center justify-center mb-4 shadow-sm"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-2">Pagos al Exterior</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed font-medium">Canalización e ingeniería de pagos internacionales destinados a proveedores, importaciones y compromisos logísticos globales.</p>
+                    </div>
+                    <div class="p-5 bg-fondo rounded-xl border border-slate-200 hover:border-claro/40 transition">
+                        <div class="w-9 h-9 rounded-lg bg-original/10 text-original flex items-center justify-center mb-4 shadow-sm"><i data-lucide="credit-card" class="w-4 h-4"></i></div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-2">Gestión de Cobros</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed font-medium">Estructuración técnica para recibir y efectivizar capitales a través de ecosistemas digitales como Binance, PayPal, entre otros.</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center border-t border-slate-100 pt-6">
+                    <a href="#contacto" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3.5 rounded-xl transition text-xs uppercase tracking-wider shadow-sm">
+                        <i data-lucide="message-square" class="w-4 h-4"></i> Agendar Asesoría Personalizada
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
         
     <!-- PROGRAMAS / CURSOS -->
     <section id="cursos" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -141,10 +260,7 @@
                         <span class="text-xs text-slate-400 line-through block">70 $us</span>
                         <span class="text-3xl font-black text-slate-900">50 <span class="text-sm font-normal text-slate-500">$us</span></span>
                     </div>
-                    <button 
-                        @click="addToCart({id: 1, title: 'Curso Introducción a Futuros', price: 149})"
-                        class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-5 py-3.5 rounded-xl transition flex items-center gap-2 shadow-sm uppercase tracking-wider"
-                    >
+                    <button class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-5 py-3.5 rounded-xl transition flex items-center gap-2 shadow-sm uppercase tracking-wider">
                     <a href="#contacto" class="block text-center bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold py-3 rounded-xl transition uppercase tracking-wider">
                         Inscribirse Ahora
                     </a>
@@ -163,7 +279,7 @@
                     <h3 class="text-2xl font-bold text-slate-900">Curso de Trading Profesional con Volumen</h3>
                 </div>
                 <p class="text-slate-600 text-sm flex-grow mb-6 leading-relaxed font-medium">
-                    Aprende a leer la verdadera intención detrás de cada movimiento del precio. Dominarás herramientas operativas de volumen para identificar zonas de desequilibrio institucional (IPB/RPB) y alta probabilidad.
+                    Aprende a leer la verdadera intención detrás de cada movement del precio. Dominarás herramientas operativas de volumen para identificar zonas de desequilibrio institucional (IPB/RPB) y alta probabilidad.
                 </p>
                 <div class="border-t border-slate-100 pt-6 mb-6">
                     <ul class="space-y-3.5 text-sm text-slate-700 font-medium">
@@ -183,18 +299,16 @@
                         <span class="text-xs text-slate-400 line-through block">150 $us</span>
                         <span class="text-3xl font-black text-original">130 <span class="text-sm font-normal text-slate-500">$us</span></span>
                     </div>
-                    <button 
-                        @click="addToCart({id: 2, title: 'Curso Profesional con Volumen', price: 249})"
-                        class="bg-original hover:bg-original/90 text-white text-xs font-bold px-5 py-3.5 rounded-xl transition flex items-center gap-2 shadow-md uppercase tracking-wider"
-                    >
+                    <button class="bg-original hover:bg-original/90 text-white text-xs font-bold px-5 py-3.5 rounded-xl transition flex items-center gap-2 shadow-md uppercase tracking-wider">
                     <a href="#contacto" class="block text-center bg-original hover:bg-original/90 text-white text-xs font-bold py-3 rounded-xl transition uppercase tracking-wider">
                         Inscribirse Ahora
                     </a>
                     </button>
                 </div>
             </div>
-            <!-- CURSO 1 -->
-            <div class="flex flex-col bg-white rounded-2xl border border-red-600 p-8 hover:border-claro/60 transition-all duration-300 relative overflow-hidden group shadow-sm hover:shadow-md">
+
+            <!-- PROMO COMPLETA -->
+            <div class="flex flex-col bg-white rounded-2xl border border-red-600 p-8 hover:border-claro/60 transition-all duration-300 relative overflow-hidden group shadow-sm hover:shadow-md md:col-span-2 max-w-2xl mx-auto w-full">
                 <div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl border-l border-b border-claro/20">RECOMENDADO</div>
                 
                     <img class="w-auto h-auto flex justify-center border-4 rounded-lg p-2 my-5" src="img/cursos_web_promo_Mesa de trabajo 1 copia 2.jpg" alt="">
@@ -203,12 +317,12 @@
                     <span class="text-xs font-bold text-claro uppercase tracking-widest block mb-1">PROMO</span>
                     <h3 class="text-2xl font-extrabold text-slate-900">¡PROMO PROFESIONAL!</h3>
                 </div>
-                <p class="text-slate-600 text-sm flex-grow mb-6 leading-relaxed font-medium">
+                <div class="text-slate-600 text-sm flex-grow mb-6 leading-relaxed font-medium">
                    Programa completo para convertirte en un trader profesional, el programa cuenta con información completa, paso a paso para aprender a operar
                    y luego rentabilizar tu trading utilizando herramientas profesionales.
                    <br>
-                   <br> <h1 class="text-red-800">La promo incluye:</h1>
-                </p>
+                   <br> <h1 class="text-red-800 font-bold">La promo incluye:</h1>
+                </div>
                 <div class="border-t border-slate-100 pt-6 mb-6">
                     <ul class="space-y-3.5 text-sm text-slate-700 font-medium">
                         <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-claro mt-0.5 flex-shrink-0"></i> Contenido del curso introductorio</li>
@@ -225,10 +339,7 @@
                         <span class="text-xs text-slate-400 line-through block">180 $us</span>
                         <span class="text-3xl font-black text-slate-900">150 <span class="text-sm font-normal text-slate-500">$us</span></span>
                     </div>
-                    <button 
-                        @click="addToCart({id: 1, title: 'Curso Introducción a Futuros', price: 149})"
-                        class="bg-red-400 hover:bg-red-600 text-white text-xs font-bold px-5 py-3.5 rounded-xl transition flex items-center gap-2 shadow-sm uppercase tracking-wider"
-                    >
+                    <button class="bg-red-400 hover:bg-red-600 text-white text-xs font-bold px-5 py-3.5 rounded-xl transition flex items-center gap-2 shadow-sm uppercase tracking-wider">
                               <a href="#contacto" class="block text-center bg-red-400 hover:bg-red-600 text-white text-xs font-bold py-3 rounded-xl transition uppercase tracking-wider">
                     Inscribirse Ahora
                 </a>
@@ -239,6 +350,8 @@
         </div>       
     </section>
 
+
+    <!-- BENEFICIOS -->
     <section id="beneficios" class="bg-white border-y border-slate-200/60 py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-3 gap-8">
@@ -266,12 +379,14 @@
             </div>
         </div>
     </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
     <section id="contacto" class="py-20 bg-white border-t border-slate-200">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <span class="text-xs font-bold text-original uppercase tracking-widest bg-original/10 px-3 py-1 rounded-full">Reserva tu plaza</span>
                 <h2 class="text-3xl font-black text-slate-900 mt-3 tracking-tight">Formulario de Inscripción y Contacto</h2>
-                <p class="mt-3 text-sm text-slate-600 font-medium">Completa tus datos, selecciona el programa de tu interés y un asesor te enviará los datos de acceso y métodos de pago directamente a tu correo.</p>
+                <p class="mt-3 text-sm text-slate-600 font-medium">Completa tus datos, selecciona el programa o servicio de tu interés y un asesor te enviará los datos de acceso y métodos de pago directamente a tu correo.</p>
             </div>
 
             <form action="https://formspree.io/f/xdardyko" method="POST" class="bg-fondo/50 border border-slate-200 p-8 rounded-2xl shadow-sm space-y-6">
@@ -299,6 +414,8 @@
                             <option value="Curso Introductorio (50 USD)">Curso de Introducción al Trading de Futuros — 50 USD</option>
                             <option value="Curso Profesional con Volumen (130 USD)">Curso de Trading Profesional con Volumen — 130 USD</option>
                             <option value="Promo Profesional Completa (150 USD)">¡PROMO PROFESIONAL COMPLETA! — 150 USD</option>
+                            <option value="Servicios de Inversión (Renta Fija / Variable)">Servicios de Inversión (Renta Fija / Variable)</option>
+                            <option value="Asesoría Financiera y Corretaje (USDT / Pagos)">Asesoría Financiera y Corretaje (USDT / Pagos)</option>
                             <option value="Solo Consultas / Dudas Generales">Tengo dudas generales / Quiero hablar con un mentor</option>
                         </select>
                     </div>
@@ -316,22 +433,15 @@
         </div>
     </section>
 
-
-      <!-- Hero Section -->
-   
-
-
-    <!-- Bio & Multidisciplina -->
+    <!-- BIO & MULTIDISCIPLINA -->
     <section id="experiencia" class="py-24 container mx-auto px-6">
         <div class="container mx-auto px-6 text-center mb-16">
             <h2 class="text-4xl text-[#78BABF] font-bold">JESÚS SALVATIERRA - FORMADOR</h2>
             <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
         </div>
         <div class="flex flex-col md:flex-row items-center gap-16">
-            <!-- Imagen/Mascota -->
             <div class="w-full md:w-1/2 flex justify-center" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false">
                 <div class="relative w-64 h-64 md:w-80 md:h-80 transition-all duration-500" :class="hover ? 'scale-110' : 'scale-100'">
-                    
                     <div class="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-2xl rotate-6 opacity-20 transition-transform" :class="hover ? 'rotate-12' : 'rotate-6'"></div>
                     <div class="relative w-full h-full glass rounded-2xl flex items-center justify-center border-white/20">
                         <img class="rounded-2xl" src="img/about2.png" alt="">
@@ -350,7 +460,6 @@
                     y lo que no se debe hacer en el trading.
                 </p>
                 
-                <!-- Cards de Habilidades -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="p-4 glass rounded-xl border-l-4 border-blue-500">
                         <h4 class="font-bold mb-1">Trading & Dev</h4>
@@ -365,9 +474,7 @@
         </div>
     </section>
 
-
-  
-    <!-- Sección de Intereses (Grid Dinámico) -->
+    <!-- SECCIÓN DE EXPERIENCIA -->
     <section class="py-24 bg-white">
         <div class="container mx-auto px-6 text-center mb-16">
             <h2 class="text-4xl text-[#78BABF] font-bold">Experiencia</h2>
@@ -375,19 +482,16 @@
         </div>
         
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Interés 1 -->
             <div class="p-8 glass rounded-3xl hover:bg-white/5 transition-all group">
                 <i class="fa-solid fa-microchip text-4xl text-[#78BABF] mb-6 group-hover:scale-110 transition-transform"></i>
                 <h3 class="text-xl text-gray-800 font-bold mb-3">Trading algorítmico</h3>
                 <p class="text-gray-500">3 años de experiencia diseñando mis propios indicadores y bots de trading en plataformas de codigo como PineScript y MQL5 </p>
             </div>
-            <!-- Interés 2 -->
             <div class="p-8 glass rounded-3xl hover:bg-white/5 transition-all group">
                 <i class="fa-solid fa-chart-pie text-4xl text-[#78BABF] mb-6 group-hover:scale-110 transition-transform"></i>
                 <h3 class="text-xl text-gray-800 font-bold mb-3">Trading Estadístico</h3>
                 <p class="text-gray-500">Uso de estrategias con datos estadísticos, riesgo/beneficio y gestión de riesgo basada en porcentajes del capital </p>
             </div>
-            <!-- Interés 3 -->
             <div class="p-8 glass rounded-3xl hover:bg-white/5 transition-all group">
                 <i class="fa-solid fa-chalkboard-user text-4xl text-[#78BABF] mb-6 group-hover:scale-110 transition-transform"></i>
                 <h3 class="text-xl text-gray-800 font-bold mb-3">Coach de Trading</h3>
@@ -395,7 +499,6 @@
             </div>
         </div>
     </section>
-    
     
     <section id="garantia" class="py-24 text-center max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-claro/10 text-original mb-6 border border-claro/30">
@@ -416,7 +519,7 @@
     <a href="https://wa.me/59176027110?text=Hola,%20vengo%20de%20la%20página%20web.%20Me%20gustaría%20obtener%20más%20información%20sobre%20los%20cursos%20de%20trading." 
        target="_blank" 
        rel="noopener noreferrer"
-       class="fixed bottom-6 right-6 z-50 bg-whatsapp hover:bg-[#20ba5a]  rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center group">
+       class="fixed bottom-6 right-6 z-50 bg-whatsapp hover:bg-[#20ba5a] rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center group">
         <img class="max-w-[50px]" src="img/whapp.png" alt="">
         <span class="absolute right-16 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-md">
             ¿Dudas? Escríbenos por WhatsApp
